@@ -4,10 +4,11 @@ import json
 import google.generativeai as genai
 import re
 import numpy as np
-
+import os
 app = FastAPI()
 model = genai.GenerativeModel("gemini-2.5-flash")
-genai.configure(api_key = "AIzaSyB_rOrTSWICnPX1uFQt_9HHg-L7E6Igwqg")
+api_key = os.getenv("GOOGLE_API_KEY)
+genai.configure(api_key = api_key)
 class Textanalyzer(BaseModel):
     text : str
 def extract_json(text : str):
