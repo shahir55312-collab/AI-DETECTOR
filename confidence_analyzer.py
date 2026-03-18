@@ -7,7 +7,7 @@ import numpy as np
 import os
 app = FastAPI()
 model = genai.GenerativeModel("gemini-2.5-flash")
-api_key = os.getenv("GOOGLE_API_KEY)
+api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key = api_key)
 class Textanalyzer(BaseModel):
     text : str
